@@ -10,24 +10,24 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>Tviy Evakuator — Евакуатори онлайн</title>
-  <script type="module" crossorigin src="/tviy.evakuator-frontend/assets/index-BG7SJc8s.js"></script>
+  <script type="text/javascript">
+    (function (l) {
+      if (l.search && l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        });
+        var path = decoded[0];
+        var query = decoded.slice(1).join('&');
+        var newUrl = l.pathname.slice(0, -1) + path + (query ? '?' + query : '') + l.hash;
+        window.history.replaceState(null, null, newUrl);
+      }
+    }(window.location));
+  </script>
+  <script type="module" crossorigin src="/tviy.evakuator-frontend/assets/index-CBGI_JAM.js"></script>
   <link rel="stylesheet" crossorigin href="/tviy.evakuator-frontend/assets/index-1Q8xZ7g2.css">
 </head>
 
 <body>
   <div id="root"></div>
 </body>
-<script type="text/javascript">
-  (function (l) {
-    if (l.search[1] === '/') {
-      var decoded = l.search.slice(1).split('&').map(function (s) {
-        return s.replace(/~and~/g, '&')
-      }).join('?');
-      window.history.replaceState(null, null,
-        l.pathname.slice(0, -1) + decoded + l.hash
-      );
-    }
-  }(window.location));
-</script>
-
 </html>
